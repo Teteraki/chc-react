@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { EventCard } from "./EventCard";
 import { fetchEvents } from "../../services/eventsService";
-import { ensureSession } from "../../lib/appwrite";
+
 import { getNextSortKey } from "../../utils/event-utils";
 import type { EventItem } from "../../types/EventItem";
 
@@ -13,7 +13,6 @@ export const UpcomingEvents: React.FC = () => {
   useEffect(() => {
     (async () => {
       try {
-        await ensureSession(); // no-op if public-read
         const all = await fetchEvents(); // returns ALL rows
         setEvents(all);
       } catch (e: any) {
