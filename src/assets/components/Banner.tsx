@@ -45,7 +45,7 @@ export const Banner = () => {
             className="mx-auto mb-6 w-32 sm:w-40 md:w-48"
           />
           <h1 className="text-4xl font-bold sm:text-5xl">
-            <strong className="text-yellow-300"> We </strong>
+            <strong className="text-yellow-400"> We </strong>
             are Cold Hands Collective
           </h1>
 

@@ -13,13 +13,15 @@ function App() {
       <Header />
       <Banner />
       <Sponsors />
-      <UpcomingEvents />
-
-      <div id="about">
+      <section id="upcoming">
+        <UpcomingEvents />
+      </section>
+      <section id="about">
         <About />
-      </div>
-
-      <PastEvents />
+      </section>
+      <section id="past">
+        <PastEvents />
+      </section>
       <Footer />
     </>
   );

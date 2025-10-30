@@ -1,3 +1,5 @@
+import { ContactForm } from "./ContactForm";
+
 export const About = () => {
   return (
     <section className="w-full bg-slate-200">
@@ -96,18 +98,7 @@ export const About = () => {
           </p>
         </div>
 
-        {/* CTA */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-gray-600">
-            Want to team up for a Calgary Smash event?
-          </p>
-          <a
-            href="#contact"
-            className="inline-block mt-3 rounded-full bg-gray-900 px-6 py-3 text-white font-semibold hover:opacity-90 transition"
-          >
-            Collaborate with CHC
-          </a>
-        </div>
+        <ContactForm />
       </div>
     </section>
   );
