@@ -15,7 +15,7 @@ export const PastEvents: React.FC = () => {
       </div>
 
       {/* Flexbox: smooth shrink, 3 → 2 → 1, with mobile gutters (IDENTICAL to Upcoming) */}
-      <div className="mx-auto max-w-7xl flex flex-wrap items-stretch justify-center gap-6 px-4 sm:px-0">
+      <div className="mx-auto max-w-7xl flex flex-wrap items-stretch justify-center gap-6 px-4 ">
         {past.map((e, i) => (
           <div
             key={`past-${i}`}

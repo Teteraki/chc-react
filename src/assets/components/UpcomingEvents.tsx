@@ -22,7 +22,7 @@ export const UpcomingEvents: React.FC = () => {
   });
 
   return (
-    <div className=" py-6">
+    <div className="py-6">
       <div className="mx-auto max-w-prose pb-6 text-center text-white ">
         <h2 className="text-3xl font-bold">Upcoming Events</h2>
         <p className="text-gray-400">
@@ -31,7 +31,7 @@ export const UpcomingEvents: React.FC = () => {
       </div>
 
       {/* Flexbox: smooth shrink, 3 → 2 → 1, with mobile gutters */}
-      <div className="mx-auto max-w-7xl flex flex-wrap items-stretch justify-center gap-6 px-4 sm:px-0">
+      <div className="mx-auto max-w-7xl flex flex-wrap items-stretch justify-center gap-6 px-4 ">
         {sorted.map((e, i) => (
           <div
             key={`up-${i}`}

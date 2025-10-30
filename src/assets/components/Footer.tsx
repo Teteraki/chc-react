@@ -4,29 +4,16 @@ export const Footer = () => {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           {/* Logo and Brand */}
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col items-center gap-2 md:flex-row md:gap-3">
             <img
-              src="https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/680958d80017cee7ca28/view?project=68007df0002d3c24adaa&mode=admin"
+              src="https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/68095c21001977dae23e/view?project=68007df0002d3c24adaa&mode=admin"
               alt="Cold Hands Collective logo"
-              className="h-8"
+              className="h-20 w-auto"
             />
+            <p className="text-white font-semibold tracking-wide text-center md:text-left">
+              Cold Hands Collective
+            </p>
           </div>
-
-          {/* Footer Links */}
-          <nav className="flex flex-wrap justify-center gap-6 text-sm">
-            <a href="#" className="transition hover:text-gray-400">
-              Events
-            </a>
-            <a href="#" className="transition hover:text-gray-400">
-              About
-            </a>
-            <a href="#" className="transition hover:text-gray-400">
-              Partners
-            </a>
-            <a href="#" className="transition hover:text-gray-400">
-              Contact
-            </a>
-          </nav>
 
           {/* Socials */}
           <div className="flex justify-center gap-4">
