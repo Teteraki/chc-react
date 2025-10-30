@@ -53,35 +53,38 @@ export const About = () => {
             All our events are planned, produced, and executed by CHC with
             support from the community and partners.
           </p>
+          <div className="justify-items-center">
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 ">
+              {/* Operations & Logistics */}
+              <div className="rounded-2xl border border-gray-200 p-6">
+                <h3 className="text-lg font-semibold">
+                  Operations & Logistics
+                </h3>
+                <ul className="mt-3 space-y-2 text-sm text-gray-600 list-disc list-inside ">
+                  <li>Venue logistics & partnerships</li>
+                  <li>Scheduling & bracket flow</li>
+                  <li>Player & talent hospitality</li>
+                </ul>
+              </div>
 
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 justify-items-center">
-            {/* Operations & Logistics */}
-            <div className="rounded-2xl border border-gray-200 p-6">
-              <h3 className="text-lg font-semibold">Operations & Logistics</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-600 list-disc list-inside">
-                <li>Venue logistics & partnerships</li>
-                <li>Scheduling & bracket flow</li>
-                <li>Player & talent hospitality</li>
-              </ul>
-            </div>
-
-            {/* Broadcast & Media */}
-            <div className="rounded-2xl border border-gray-200 p-6">
-              <h3 className="text-lg font-semibold">Broadcast & Media</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-600 list-disc list-inside">
-                <li>Hardware & knowledge for livestreaming</li>
-                <li>Social media & community advertising</li>
-                <li>Highlights & featured matches</li>
-              </ul>
-            </div>
-            {/* Execution */}
-            <div className="rounded-2xl border border-gray-200 p-6">
-              <h3 className="text-lg font-semibold">Execution</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-600 list-disc list-inside">
-                <li>Staff & volunteer management</li>
-                <li>On‑site problem solving</li>
-                <li>Program & run‑of‑show</li>
-              </ul>
+              {/* Broadcast & Media */}
+              <div className="rounded-2xl border border-gray-200 p-6">
+                <h3 className="text-lg font-semibold">Broadcast & Media</h3>
+                <ul className="mt-3 space-y-2 text-sm text-gray-600 list-disc list-inside">
+                  <li>Hardware & knowledge for livestreaming</li>
+                  <li>Social media & community advertising</li>
+                  <li>Highlights & featured matches</li>
+                </ul>
+              </div>
+              {/* Execution */}
+              <div className="rounded-2xl border border-gray-200 p-6">
+                <h3 className="text-lg font-semibold">Execution</h3>
+                <ul className="mt-3 space-y-2 text-sm text-gray-600 list-disc list-inside">
+                  <li>Staff & volunteer management</li>
+                  <li>On‑site problem solving</li>
+                  <li>Program & run‑of‑show</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
