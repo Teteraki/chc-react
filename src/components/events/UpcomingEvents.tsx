@@ -1,12 +1,33 @@
-import React from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useEffect, useState } from "react";
 import { EventCard } from "./EventCard";
-import { events } from "../../data/events";
+import { fetchEvents } from "../../services/eventsService";
+import { ensureSession } from "../../lib/appwrite";
 import { getNextSortKey } from "../../utils/event-utils";
+import type { EventItem } from "../../types/EventItem";
 
 export const UpcomingEvents: React.FC = () => {
+  const [events, setEvents] = useState<EventItem[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        await ensureSession(); // no-op if public-read
+        const all = await fetchEvents(); // returns ALL rows
+        setEvents(all);
+      } catch (e: any) {
+        setError(e?.message ?? "Failed to load events");
+      }
+    })();
+  }, []);
+
+  if (error) return <div className="text-red-500">{error}</div>;
+  if (!events) return <div>Loading events…</div>;
+
   const upcoming = events.filter((e) => e.upcoming);
 
-  // TBA first, then earliest date
+  // TBA first, then earliest date (keeps your existing logic)
   const sorted = [...upcoming].sort((a, b) => {
     const A = getNextSortKey(a);
     const B = getNextSortKey(b);
@@ -34,12 +55,8 @@ export const UpcomingEvents: React.FC = () => {
       <div className="mx-auto max-w-7xl flex flex-wrap items-stretch justify-center gap-6 px-4 ">
         {sorted.map((e, i) => (
           <div
-            key={`up-${i}`}
-            className="
-              flex
-              basis-full sm:basis-[48%] lg:basis-[30%]
-              min-w-[260px]
-            "
+            key={`up-${e.name}-${e.initialDateISO ?? i}`}
+            className="flex basis-full sm:basis-[48%] lg:basis-[30%] min-w-[260px]"
           >
             {/* Make the card fill the flex item height for equal-looking rows */}
             <div className="flex w-full">
