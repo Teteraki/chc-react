@@ -1,4 +1,4 @@
-import { ContactForm } from "./ContactForm";
+import { ContactForm } from "../contact/ContactForm";
 
 export const About = () => {
   return (
@@ -94,10 +94,9 @@ export const About = () => {
           <h2 className="text-xl sm:text-2xl font-bold">How We Work</h2>
           <p className="mt-2 text-gray-700">
             While we don’t necessarily consult out tournament hosting, we rather
-            collaborate with partners to bring{" "}
-            <span className="font-semibold">our</span> events to life — aligning
-            on goals, sharing responsibilities, and delivering a consistent CHC
-            experience.
+            collaborate with partners to bring exciting events to life —
+            aligning on goals, sharing responsibilities, and delivering a
+            consistent Cold Hands Collective experience.
           </p>
         </div>
 

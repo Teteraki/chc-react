@@ -1,11 +1,11 @@
 import "./App.css";
-import { Banner } from "./assets/components/Banner";
-import { UpcomingEvents } from "./assets/components/UpcomingEvents";
-import { Header } from "./assets/components/Header";
-import { Sponsors } from "./assets/components/Sponsors";
-import { PastEvents } from "./assets/components/PastEvents";
-import { Footer } from "./assets/components/Footer";
-import { About } from "./assets/components/About";
+import { Banner } from "./components/banner/Banner";
+import { UpcomingEvents } from "./components/events/UpcomingEvents";
+import { Header } from "./components/header/Header";
+import { Sponsors } from "./components/sponsors/Sponsors";
+import { PastEvents } from "./components/events/PastEvents";
+import { Footer } from "./components/footer/Footer";
+import { About } from "./components/about/About";
 
 function App() {
   return (
