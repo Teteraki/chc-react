@@ -1,92 +1,92 @@
-// Keep this in sync with EventCard props
-export type EventItem = {
-  name: string;
-  frequency: string; // "Weekly" | "Bi-Weekly" | "Monthly" | "Regional"
-  image: string;
-  location: string;
-  tagline: string;
-  href?: string;
-  upcoming: boolean; // true => upcoming, false => past
-  dayOfWeek?: number; // 0=Sun ... 6=Sat (for weekly/bi-weekly)
-  time?: string; // "HH:mm"
-  initialDateISO?: string; // optional anchor / fixed date
-};
+// // Keep this in sync with EventCard props
+// export type EventItem = {
+//   name: string;
+//   frequency: string; // "Weekly" | "Bi-Weekly" | "Monthly" | "Regional"
+//   image: string;
+//   location: string;
+//   tagline: string;
+//   href?: string;
+//   upcoming: boolean; // true => upcoming, false => past
+//   dayOfWeek?: number; // 0=Sun ... 6=Sat (for weekly/bi-weekly)
+//   time?: string; // "HH:mm"
+//   initialDateISO?: string; // optional anchor / fixed date
+// };
 
-export const events: EventItem[] = [
-  {
-    name: "The Arena Arc",
-    image:
-      "https://images.start.gg/images/tournament/839773/image-a396f61bfe6251bb3ef418ada8a8fad1.jpg",
-    frequency: "Bi-Weekly",
-    location: "345 6th Ave SE, Calgary, AB T2G 4V1",
-    tagline:
-      "The arena arc begins for Cold Hands at the Bow Valley Esports Arena!",
-    href: "https://start.gg/taa",
-    dayOfWeek: 5, // Tuesday
-    time: "17:30",
-    initialDateISO: "2025-10-24T17:30:00",
-    upcoming: true,
-  },
-  {
-    name: "MRU Smash Club Weekly",
-    image:
-      "https://images.start.gg/images/tournament/845346/image-166f3c48c7710c413493e119fd4fd330.png",
-    frequency: "Weekly",
-    location: "4825 Mount Royal Gate S.W. Calgary, AB",
-    tagline: "Every second Tuesday on the 2nd Floor of Wyckham House!",
-    href: "https://start.gg/mrusmash",
-    dayOfWeek: 2, // Thursday
-    time: "17:30",
-    initialDateISO: "2025-10-28T17:30:00",
-    upcoming: true,
-  },
+// export const events: EventItem[] = [
+//   {
+//     name: "The Arena Arc",
+//     image:
+//       "https://images.start.gg/images/tournament/839773/image-a396f61bfe6251bb3ef418ada8a8fad1.jpg",
+//     frequency: "Bi-Weekly",
+//     location: "345 6th Ave SE, Calgary, AB T2G 4V1",
+//     tagline:
+//       "The arena arc begins for Cold Hands at the Bow Valley Esports Arena!",
+//     href: "https://start.gg/taa",
+//     dayOfWeek: 5, // Tuesday
+//     time: "17:30",
+//     initialDateISO: "2025-10-24T17:30:00",
+//     upcoming: true,
+//   },
+//   {
+//     name: "MRU Smash Club Weekly",
+//     image:
+//       "https://images.start.gg/images/tournament/845346/image-166f3c48c7710c413493e119fd4fd330.png",
+//     frequency: "Weekly",
+//     location: "4825 Mount Royal Gate S.W. Calgary, AB",
+//     tagline: "Every second Tuesday on the 2nd Floor of Wyckham House!",
+//     href: "https://start.gg/mrusmash",
+//     dayOfWeek: 2, // Thursday
+//     time: "17:30",
+//     initialDateISO: "2025-10-28T17:30:00",
+//     upcoming: true,
+//   },
 
-  {
-    name: "Heat Check",
-    image:
-      "https://images.start.gg/images/tournament/806116/image-02db646c024bf5f3818c39180a23c1ce.png",
-    frequency: "Regional",
-    location: "Bow Valley College Esports Arena",
-    tagline:
-      "A summer wrap-up spectacle! Who will go on a fire run and claim the crown?",
-    href: "https://start.gg/heatcheck",
-    initialDateISO: "2025-02-10T10:00:00",
-    upcoming: false,
-  },
-  {
-    name: "Black Tie Basement",
-    image:
-      "https://images.start.gg/images/tournament/834173/image-45074a8f1d9d7d1724e9975206672a94.png",
-    frequency: "Bi-Weekly",
-    location: "Tuxedo Park Community Association and Hall",
-    tagline: "The classic Tuxedo Park Smash tournament!",
-    href: "https://start.gg/btb",
-    initialDateISO: "2025-02-10T10:00:00",
-    upcoming: false,
-  },
+//   {
+//     name: "Heat Check",
+//     image:
+//       "https://images.start.gg/images/tournament/806116/image-02db646c024bf5f3818c39180a23c1ce.png",
+//     frequency: "Regional",
+//     location: "Bow Valley College Esports Arena",
+//     tagline:
+//       "A summer wrap-up spectacle! Who will go on a fire run and claim the crown?",
+//     href: "https://start.gg/heatcheck",
+//     initialDateISO: "2025-02-10T10:00:00",
+//     upcoming: false,
+//   },
+//   {
+//     name: "Black Tie Basement",
+//     image:
+//       "https://images.start.gg/images/tournament/834173/image-45074a8f1d9d7d1724e9975206672a94.png",
+//     frequency: "Bi-Weekly",
+//     location: "Tuxedo Park Community Association and Hall",
+//     tagline: "The classic Tuxedo Park Smash tournament!",
+//     href: "https://start.gg/btb",
+//     initialDateISO: "2025-02-10T10:00:00",
+//     upcoming: false,
+//   },
 
-  {
-    name: "Salt Flats x Cold Hands",
-    image:
-      "https://images.start.gg/images/tournament/743618/image-ea2986f0733528cbf34828100dede8f0.png?ehk=2kkI0RnFbI%2B0DpulBBmSaWbFoQYa8KJhY6JP794DWnY%3D&ehkOptimized=uncZpMycqV5oRmz79o7claCvkDKk0B%2FHdKf86aReiqE%3D",
-    frequency: "Regional",
-    location: "Bowness Community Association",
-    tagline:
-      "Salt Flats partnered with local esports and gaming organizations to bring the best experience for all competitors!",
-    href: "https://start.gg/saltflats",
-    initialDateISO: "2025-02-10T10:00:00",
-    upcoming: false,
-  },
+//   {
+//     name: "Salt Flats x Cold Hands",
+//     image:
+//       "https://images.start.gg/images/tournament/743618/image-ea2986f0733528cbf34828100dede8f0.png?ehk=2kkI0RnFbI%2B0DpulBBmSaWbFoQYa8KJhY6JP794DWnY%3D&ehkOptimized=uncZpMycqV5oRmz79o7claCvkDKk0B%2FHdKf86aReiqE%3D",
+//     frequency: "Regional",
+//     location: "Bowness Community Association",
+//     tagline:
+//       "Salt Flats partnered with local esports and gaming organizations to bring the best experience for all competitors!",
+//     href: "https://start.gg/saltflats",
+//     initialDateISO: "2025-02-10T10:00:00",
+//     upcoming: false,
+//   },
 
-  {
-    name: "The Fireplace",
-    image:
-      "https://images.start.gg/images/tournament/736204/image-a14f70ffeaa8031aaa276b155f814aca.png?ehk=rPEHMK7UEshbAIL1sNO92jM3e2IkbPxj%2BOrBAmH5ujI%3D&ehkOptimized=9jmjHWamo1Ff2NZtaceEqcIMLNfsW5YDOVmBKBExwdQ%3D",
-    frequency: "Popup",
-    location: "Bowness Community Association",
-    tagline: "A holiday Melee bracket to introduce Cold Hands!",
-    href: "ttps://start.gg/fire",
-    initialDateISO: "2025-02-10T10:00:00",
-    upcoming: false,
-  },
-];
+//   {
+//     name: "The Fireplace",
+//     image:
+//       "https://images.start.gg/images/tournament/736204/image-a14f70ffeaa8031aaa276b155f814aca.png?ehk=rPEHMK7UEshbAIL1sNO92jM3e2IkbPxj%2BOrBAmH5ujI%3D&ehkOptimized=9jmjHWamo1Ff2NZtaceEqcIMLNfsW5YDOVmBKBExwdQ%3D",
+//     frequency: "Popup",
+//     location: "Bowness Community Association",
+//     tagline: "A holiday Melee bracket to introduce Cold Hands!",
+//     href: "ttps://start.gg/fire",
+//     initialDateISO: "2025-02-10T10:00:00",
+//     upcoming: false,
+//   },
+// ];

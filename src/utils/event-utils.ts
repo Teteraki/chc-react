@@ -1,4 +1,4 @@
-import type { EventItem } from "../data/events";
+import type { EventItem } from "../types/EventItem";
 
 // Helpers shared with Upcoming sort (mirror EventCard logic)
 const parseTime = (t?: string) => {
