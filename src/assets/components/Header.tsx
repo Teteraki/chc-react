@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
   const handleNavClick = () => setOpen(false);
 
   return (
-    <header className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 shadow-lg">
+    <header className="relative bg-linear-to-r from-slate-900 via-slate-800 to-slate-900 shadow-lg">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-8 px-4 sm:px-6 lg:px-8">
         <a className="block text-teal-600 dark:text-teal-300" href="#">
           <img

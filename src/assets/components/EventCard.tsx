@@ -124,6 +124,7 @@ export const EventCard: React.FC<EventCardProps> = ({
   return (
     <a
       href={href}
+      target="_blank"
       className="group h-full block rounded-2xl overflow-hidden shadow-lg bg-black/90 border border-slate-800
              transition-transform duration-300 ease-out hover:scale-[1.01] md:hover:scale-[1.015]"
     >
@@ -135,7 +136,7 @@ export const EventCard: React.FC<EventCardProps> = ({
             src={image}
             className="h-full w-full object-cover opacity-80 transition-opacity duration-300 ease-out group-hover:opacity-60"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
         </div>
 
         <div className="absolute inset-x-2 bottom-2 sm:inset-x-3 sm:bottom-3 lg:inset-x-5 lg:bottom-5 transition-[inset] duration-300 ease-out">
@@ -151,7 +152,10 @@ export const EventCard: React.FC<EventCardProps> = ({
             {name}
           </p>
 
-          <div className="mt-2 translate-y-2 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+          <div
+            className="mt-2 transition-all duration-300 ease-out
+             sm:translate-y-2 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100"
+          >
             <p className="text-white/90 text-[clamp(0.8rem,1.5vw,0.9rem)] leading-relaxed">
               <span className="font-semibold">Location:</span> {location}
               {upcoming && nextText && (
