@@ -6,8 +6,8 @@ export const PastEvents: React.FC = () => {
   if (!past.length) return null;
 
   return (
-    <>
-      <div className="mx-auto max-w-prose py-6 text-center text-white">
+    <div className="shadow-lg py-6">
+      <div className="mx-auto max-w-prose pb-6 text-center text-white ">
         <h2 className="text-3xl font-bold">Past Events</h2>
         <p className="text-gray-400">
           Checkout our past tournaments and events below!
@@ -42,6 +42,6 @@ export const PastEvents: React.FC = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };

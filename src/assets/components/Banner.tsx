@@ -20,7 +20,7 @@ export const Banner = () => {
   }, []);
 
   return (
-    <section className="relative h-[600px] w-full overflow-hidden">
+    <section className="relative h-[600px] w-full overflow-hidden shadow-lg">
       {/* Background carousel */}
       <div className="absolute inset-0">
         {images.map((img, i) => (
@@ -39,26 +39,24 @@ export const Banner = () => {
       {/* Foreground content */}
       <div className="relative z-10 flex h-full items-center justify-center px-4 py-16">
         <div className="mx-auto max-w-prose text-center text-white">
-          {/* <img src="/bunny-banner-logo.png"></img> */}
+          <img
+            src="https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/68095c21001977dae23e/view?project=68007df0002d3c24adaa&mode=admin"
+            alt="Cold Hands Collective Logo"
+            className="mx-auto mb-6 w-32 sm:w-40 md:w-48"
+          />
           <h1 className="text-4xl font-bold sm:text-5xl">
             <strong className="text-yellow-300"> We </strong>
             are Cold Hands Collective
           </h1>
 
           <p className="mt-4 text-base sm:text-lg/relaxed">
-            Calgary based, non-profit event and tournament hosting organization
-            dedicated to building accessible community competitions.
+            Calgary based, non-profit tournament hosting organization dedicated
+            to building accessible, community-first, Smash Bros. competitions.
           </p>
 
           <div className="mt-6 flex justify-center gap-4">
             <a
-              href="#"
-              className="inline-block rounded border border-indigo-500 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
-            >
-              Get Started
-            </a>
-            <a
-              href="#"
+              href="#about"
               className="inline-block rounded border border-gray-300 px-5 py-3 font-medium text-gray-200 shadow-sm transition-colors hover:bg-white/10"
             >
               Learn More

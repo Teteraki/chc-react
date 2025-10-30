@@ -128,7 +128,7 @@ export const EventCard: React.FC<EventCardProps> = ({
              transition-transform duration-300 ease-out hover:scale-[1.01] md:hover:scale-[1.015]"
     >
       {/* Reduced height ratio */}
-      <div className="relative aspect-[3/4] p-1.5 sm:p-2">
+      <div className="relative p-1.5 sm:p-2">
         <div className="relative h-full w-full rounded-xl overflow-hidden">
           <img
             alt={name}

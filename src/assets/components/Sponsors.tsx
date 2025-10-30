@@ -19,10 +19,10 @@ export const Sponsors = () => {
   ];
 
   return (
-    <section className="w-full py-10 shadow-inner">
-      <div className="mx-auto max-w-prose text-center text-white pb-6">
+    <section className="w-full py-10  bg-slate-200">
+      <div className="mx-auto max-w-prose text-center text-black pb-6">
         <h2 className="text-3xl font-bold">Community Supporters</h2>
-        <p className="text-gray-400">Be sure to check them out below!</p>
+        <p className="text-gray-900">Be sure to check them out below!</p>
       </div>
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-10 px-4">
         {sponsors.map((sponsor, i) => (

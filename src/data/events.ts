@@ -64,4 +64,30 @@ export const events: EventItem[] = [
     initialDateISO: "2025-02-10T10:00:00",
     upcoming: false,
   },
+
+  {
+    name: "Salt Flats x Cold Hands",
+    image:
+      "https://images.start.gg/images/tournament/743618/image-ea2986f0733528cbf34828100dede8f0.png?ehk=2kkI0RnFbI%2B0DpulBBmSaWbFoQYa8KJhY6JP794DWnY%3D&ehkOptimized=uncZpMycqV5oRmz79o7claCvkDKk0B%2FHdKf86aReiqE%3D",
+    frequency: "Regional",
+    location: "Bowness Community Association",
+    tagline:
+      "Salt Flats is partnered with local esports and gaming organizations to bring the best experience for all competitors.!",
+    href: "https://start.gg/saltflats",
+    initialDateISO: "2025-02-10T10:00:00",
+    upcoming: false,
+  },
+
+  {
+    name: "The Fireplace",
+    image:
+      "https://images.start.gg/images/tournament/736204/image-a14f70ffeaa8031aaa276b155f814aca.png?ehk=rPEHMK7UEshbAIL1sNO92jM3e2IkbPxj%2BOrBAmH5ujI%3D&ehkOptimized=9jmjHWamo1Ff2NZtaceEqcIMLNfsW5YDOVmBKBExwdQ%3D",
+    frequency: "Popup",
+    location: "Bowness Community Association",
+    tagline:
+      "Salt Flats is partnered with local esports and gaming organizations to bring the best experience for all competitors.!",
+    href: "gttps://start.gg/fire",
+    initialDateISO: "2025-02-10T10:00:00",
+    upcoming: false,
+  },
 ];

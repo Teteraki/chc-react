@@ -22,8 +22,8 @@ export const UpcomingEvents: React.FC = () => {
   });
 
   return (
-    <>
-      <div className="mx-auto max-w-prose py-6 text-center text-white">
+    <div className=" py-6">
+      <div className="mx-auto max-w-prose pb-6 text-center text-white ">
         <h2 className="text-3xl font-bold">Upcoming Events</h2>
         <p className="text-gray-400">
           Catch our latest tournaments and meetups below!
@@ -59,6 +59,6 @@ export const UpcomingEvents: React.FC = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };

@@ -1,17 +1,26 @@
 export const Header = () => {
   return (
-    <header className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
+    <header className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 shadow-lg">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-8 px-4 sm:px-6 lg:px-8">
         <a className="block text-teal-600 dark:text-teal-300" href="#">
           <img
-            src="https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/680958d80017cee7ca28/view?project=68007df0002d3c24adaa&mode=admin"
-            className="h-8"
+            src="https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/68095c21001977dae23e/view?project=68007df0002d3c24adaa&mode=admin"
+            className="h-12"
           ></img>
         </a>
 
         <div className="flex flex-1 items-center justify-end md:justify-between">
           <nav aria-label="Global" className="hidden md:block">
             <ul className="flex items-center gap-6 text-sm">
+              <li>
+                <a
+                  className=" text-white transition hover:text-gray-500/75"
+                  href="#"
+                >
+                  Upcoming Events
+                </a>
+              </li>
+
               <li>
                 <a
                   className=" text-white transition hover:text-gray-500/75"
@@ -26,7 +35,7 @@ export const Header = () => {
                   className=" text-white transition hover:text-gray-500/75"
                   href="#"
                 >
-                  Careers
+                  Past Events
                 </a>
               </li>
 
@@ -35,16 +44,7 @@ export const Header = () => {
                   className=" text-white transition hover:text-gray-500/75"
                   href="#"
                 >
-                  History
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className=" text-white transition hover:text-gray-500/75"
-                  href="#"
-                >
-                  Services
+                  Founders
                 </a>
               </li>
             </ul>
