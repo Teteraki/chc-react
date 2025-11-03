@@ -18,7 +18,7 @@ export const Footer = () => {
           {/* Socials */}
           <div className="flex justify-center gap-4">
             <a
-              href="https://twitter.com"
+              href="https://x.com/yycoldhands"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-teal-400 transition"
@@ -29,7 +29,7 @@ export const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/yycoldhands/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-teal-400 transition"
@@ -41,7 +41,7 @@ export const Footer = () => {
             </a>
 
             <a
-              href="https://twitch.tv"
+              href="https://www.twitch.tv/coldhandscollective"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-teal-400 transition"
@@ -53,7 +53,7 @@ export const Footer = () => {
             </a>
 
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/@yycoldhands"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-teal-400 transition"
