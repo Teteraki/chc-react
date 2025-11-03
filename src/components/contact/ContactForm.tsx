@@ -3,10 +3,31 @@ import React, { useRef, useState, useEffect } from "react";
 export const ContactForm: React.FC = () => {
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const [maxH, setMaxH] = useState(0);
 
+  // Automatically update height when panel or textarea resizes
   useEffect(() => {
-    if (panelRef.current) setMaxH(panelRef.current.scrollHeight);
+    const updateHeight = () => {
+      if (panelRef.current) {
+        setMaxH(panelRef.current.scrollHeight);
+      }
+    };
+
+    // Observe both the panel and textarea
+    const panelObserver = new ResizeObserver(updateHeight);
+    const textareaObserver = new ResizeObserver(updateHeight);
+
+    if (panelRef.current) panelObserver.observe(panelRef.current);
+    if (textareaRef.current) textareaObserver.observe(textareaRef.current);
+
+    // Update once initially when opened
+    if (open) updateHeight();
+
+    return () => {
+      panelObserver.disconnect();
+      textareaObserver.disconnect();
+    };
   }, [open]);
 
   return (
@@ -15,7 +36,7 @@ export const ContactForm: React.FC = () => {
         Want to team up for a Calgary Smash event or reach out?
       </p>
 
-      {/* Toggle button */}
+      {/* Toggle button (your original) */}
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -38,7 +59,10 @@ export const ContactForm: React.FC = () => {
           className="rounded-2xl border border-gray-200 bg-white p-6 text-left"
         >
           <h3 className="text-lg font-semibold">Send an email!</h3>
-          <a href="info@coldhands.org" className="mt-1 text-sm text-yellow-400">
+          <a
+            href="mailto:info@coldhands.org"
+            className="mt-1 text-sm text-yellow-400"
+          >
             info@coldhands.org
           </a>
 
@@ -87,9 +111,10 @@ export const ContactForm: React.FC = () => {
                 Message*
               </label>
               <textarea
+                ref={textareaRef}
                 rows={4}
                 required
-                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-gray-900/20"
+                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-gray-900/20 resize-y"
               />
             </div>
 
