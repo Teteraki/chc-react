@@ -30,7 +30,10 @@ function App() {
       <section id="past">
         <PastEvents />
       </section>
-      <OurTeam />
+      <section id="team">
+        <OurTeam />
+      </section>
+
       <Footer />
     </>
   );

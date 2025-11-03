@@ -25,16 +25,12 @@ export type TeamMember = {
   socials?: SocialLink[];
 };
 
-// --- Sample Data --------------------------------------------------------
-// In production, replace with data loaded from Appwrite collection (e.g., `teams`)
-// 1) Create a collection with fields: name, role, headshotUrl, bio, tags[], socials[]
-// 2) Fetch via an effect in a parent and pass as props OR convert this page to do the fetch directly
-// 3) Keep this local const as a graceful fallback while wiring the API
+// --- Sample Data (local-only) -------------------------------------------
 const TEAM: TeamMember[] = [
   {
     id: "dylan",
     name: "Dylan Sanders",
-    role: "Organizer • Full‑Stack",
+    role: "Organizer • Full-Stack",
     headshot: "https://placehold.co/400x400/png?text=Dylan",
     bio: "Leads A/V content & web for CHC. Focused on smooth brackets, great vibes, and clean code.",
     tags: ["TO", "Dev", "Stream"],
@@ -72,16 +68,11 @@ const TEAM: TeamMember[] = [
     name: "Riley Chen",
     role: "Bracket Lead • Rules",
     headshot: "https://placehold.co/400x400/png?text=Riley",
-    bio: "Runs pools, seeds fairly, and keeps the day moving. Player‑first coordinator.",
+    bio: "Runs pools, seeds fairly, and keeps the day moving. Player-first coordinator.",
     tags: ["TO", "Rules"],
     socials: [{ kind: "site", href: "#", label: "Ruleset" }],
   },
 ];
-
-// --- Helpers ------------------------------------------------------------
-function cx(...classes: (string | boolean | undefined | null)[]) {
-  return classes.filter(Boolean).join(" ");
-}
 
 function SocialIcon({ kind }: { kind: SocialKind }) {
   const base = "h-4 w-4";
@@ -144,18 +135,9 @@ function SocialIcon({ kind }: { kind: SocialKind }) {
 }
 
 // --- Card ---------------------------------------------------------------
-const TeamCard: React.FC<
-  { member: TeamMember } & React.HTMLAttributes<HTMLDivElement>
-> = ({ member, className, ...rest }) => {
+const TeamCard: React.FC<{ member: TeamMember }> = ({ member }) => {
   return (
-    <article
-      className={cx(
-        "group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-yellow-500 backdrop-blur",
-        "transition",
-        className
-      )}
-      {...rest}
-    >
+    <article className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition">
       <div className="flex items-start gap-4">
         <img
           src={member.headshot}
@@ -206,7 +188,7 @@ const TeamCard: React.FC<
         </div>
       )}
 
-      {/* subtle gradient accent */}
+      {/* subtle accent on hover */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-yellow-500 opacity-0 transition-opacity group-hover:opacity-100" />
     </article>
   );
@@ -226,16 +208,16 @@ const TeamGrid: React.FC<{ members: TeamMember[] }> = ({ members }) => {
 // --- Page (Drop into a route or section) --------------------------------
 export const OurTeam = ({ members = TEAM }: { members?: TeamMember[] }) => {
   return (
-    <section id="team" className="relative isolate overflow-hidden  py-16">
+    <section id="team" className="relative isolate overflow-hidden py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white ">
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white">
             People behind the brackets
           </h2>
           <p className="mt-3 text-md text-gray-300">
-            Community‑first organizers, producers, and partners building
-            Calgary's Smash scene.
+            Community-first organizers, producers, and partners building
+            Calgary&apos;s Smash scene.
           </p>
         </div>
 
@@ -249,6 +231,6 @@ export const OurTeam = ({ members = TEAM }: { members?: TeamMember[] }) => {
 };
 
 // --- Usage --------------------------------------------------------------
-// import OurTeamPage from "./OurTeam";
-// <OurTeamPage />
-// OR pass your fetched collection: <OurTeamPage members={myTeamFromAppwrite} />
+// import { OurTeam } from "./OurTeam";
+// <OurTeam />
+// or pass your own array: <OurTeam members={myTeamArray} />

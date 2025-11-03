@@ -35,7 +35,7 @@ export const Header: React.FC = () => {
     { label: "Upcoming Events", href: "#upcoming" },
     { label: "About", href: "#about" },
     { label: "Past Events", href: "#past" },
-    { label: "Founders", href: "#founders" },
+    { label: "Our Team", href: "#team" },
   ];
 
   const handleNavClick = () => setOpen(false);
