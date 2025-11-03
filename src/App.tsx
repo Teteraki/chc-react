@@ -7,6 +7,7 @@ import { PastEvents } from "./components/events/PastEvents";
 import { Footer } from "./components/footer/Footer";
 import { About } from "./components/about/About";
 import { Analytics } from "@vercel/analytics/react";
+import { StatusUpdateBar } from "./components/status-update/StatusUpdateBar";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
 
       {/* Main Page Content */}
       <Header />
+      <StatusUpdateBar />
       <Banner />
       <Sponsors />
       <section id="upcoming">
