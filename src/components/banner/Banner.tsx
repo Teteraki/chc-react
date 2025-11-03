@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 
 const images = [
   "https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/6806e4c3002cd03edec9/view?project=68007df0002d3c24adaa&mode=admin",
-  "src/assets/DSC_0017.JPG",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/6908160d000d87d0287f/view?project=68007df0002d3c24adaa&mode=admin",
   "https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/6806e4df0015f4015efe/view?project=68007df0002d3c24adaa&mode=admin",
   "https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/6806e4d40012281b8090/view?project=68007df0002d3c24adaa&mode=admin",
-  "src/assets/DSC_0020.JPG",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/690816070005bbab7dd5/view?project=68007df0002d3c24adaa&mode=admin",
 
   "https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/6801496f00331af5e85b/view?project=68007df0002d3c24adaa&mode=admin",
   // "https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/680149ca001b8fecc6e2/view?project=68007df0002d3c24adaa&mode=admin",
