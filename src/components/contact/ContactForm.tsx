@@ -52,7 +52,6 @@ export const ContactForm: React.FC = () => {
         id="chc-collab-form"
         className="mx-auto mt-6 w-full max-w-2xl overflow-hidden transition-all duration-300 ease-in-out"
         style={{ maxHeight: open ? maxH : 0 }}
-        aria-hidden={!open}
       >
         <div
           ref={panelRef}
