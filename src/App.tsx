@@ -8,6 +8,7 @@ import { Footer } from "./components/footer/Footer";
 import { About } from "./components/about/About";
 import { Analytics } from "@vercel/analytics/react";
 import { StatusUpdateBar } from "./components/status-update/StatusUpdateBar";
+import { OurTeam } from "./components/our-team/OurTeam";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <section id="past">
         <PastEvents />
       </section>
+      <OurTeam />
       <Footer />
     </>
   );
