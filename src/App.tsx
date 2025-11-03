@@ -11,7 +11,10 @@ import { Analytics } from "@vercel/analytics/react";
 function App() {
   return (
     <>
+      {/* Vercel Analytics */}
       <Analytics />
+
+      {/* Main Page Content */}
       <Header />
       <Banner />
       <Sponsors />
