@@ -14,8 +14,8 @@ export const StatusUpdateBar: React.FC<StatusUpdateBarProps> = ({
   // TODO: Replace these hard-coded defaults by values coming from your admin UI / context / API
   visible = true, // <- you can pass this from an admin controller later
   kind = "info", // hard set right now
-  message = "Next CHC event: Heat Check — Sat, Nov 8. Registration is open!",
-  link = { href: "#events", label: "View details" },
+  message = "Next CHC event: The Arena Arc: Chapter 2 — Fri, Nov 7. Registration is open!",
+  link = { href: "https://start.gg/taa", label: "View details" },
 }) => {
   // Local (uncontrolled) visibility state for dismiss animation & Esc key
   // FUTURE: i want a fully controlled component, sync this with the `visible` prop via onChange

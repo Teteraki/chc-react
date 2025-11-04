@@ -28,7 +28,7 @@ export const About = () => {
               body: "Planning, scheduling & reliable production.",
             },
             {
-              title: "Player‑first ops",
+              title: "Players‑first",
               body: "Hospitality, fairness, and fun, even for new attendees.",
             },
             {

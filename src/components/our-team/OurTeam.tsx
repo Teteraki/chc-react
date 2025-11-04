@@ -27,20 +27,32 @@ export type TeamMember = {
 
 // --- Sample Data (local-only) -------------------------------------------
 const TEAM: TeamMember[] = [
+  // {
+  //   id: "dylan",
+  //   name: "Dylan Sanders",
+  //   role: "Organizer • Full-Stack",
+  //   headshot: "https://placehold.co/400x400/png?text=Dylan",
+  //   bio: "Leads A/V content & web for CHC. Focused on smooth brackets, great vibes, and clean code.",
+  //   tags: ["TO", "Dev", "Stream"],
+  //   socials: [
+  //     { kind: "github", href: "https://github.com/Teteraki" },
+  //     { kind: "site", href: "#", label: "Portfolio" },
+  //   ],
+  // },
   {
-    id: "dylan",
-    name: "Dylan Sanders",
-    role: "Organizer • Full-Stack",
-    headshot: "https://placehold.co/400x400/png?text=Dylan",
-    bio: "Leads A/V content & web for CHC. Focused on smooth brackets, great vibes, and clean code.",
-    tags: ["TO", "Dev", "Stream"],
+    id: "alex",
+    name: "Alex Kim",
+    role: "Broadcast • Production",
+    headshot: "https://placehold.co/400x400/png?text=Alex",
+    bio: "Scenes, cams, and crispy audio. Elevates every stream with reliable tech.",
+    tags: ["Stream", "AV", "OBS"],
     socials: [
-      { kind: "github", href: "https://github.com/Teteraki" },
-      { kind: "site", href: "#", label: "Portfolio" },
+      { kind: "twitch", href: "https://twitch.tv/" },
+      { kind: "youtube", href: "https://youtube.com/" },
     ],
   },
   {
-    id: "alex",
+    id: "alex2",
     name: "Alex Kim",
     role: "Broadcast • Production",
     headshot: "https://placehold.co/400x400/png?text=Alex",
@@ -137,7 +149,7 @@ function SocialIcon({ kind }: { kind: SocialKind }) {
 // --- Card ---------------------------------------------------------------
 const TeamCard: React.FC<{ member: TeamMember }> = ({ member }) => {
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition">
+    <article className="group relative  overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition">
       <div className="flex items-start gap-4">
         <img
           src={member.headshot}
