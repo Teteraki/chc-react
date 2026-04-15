@@ -42,7 +42,7 @@ export const PastEvents: React.FC = () => {
             key={`past-${e.name}-${e.initialDateISO ?? i}`}
             className="flex basis-full sm:basis-[48%] lg:basis-[30%] min-w-[260px]"
           >
-            <div className="flex w-full">
+            <div className="w-full h-full">
               <EventCard
                 name={e.name}
                 frequency={e.frequency}

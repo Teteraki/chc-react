@@ -58,7 +58,7 @@ export const UpcomingEvents: React.FC = () => {
             className="flex basis-full sm:basis-[48%] lg:basis-[30%] min-w-[260px]"
           >
             {/* Make the card fill the flex item height for equal-looking rows */}
-            <div className="flex w-full">
+            <div className="w-full h-full">
               <EventCard
                 name={e.name}
                 frequency={e.frequency}
