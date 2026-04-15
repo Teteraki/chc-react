@@ -1,5 +1,6 @@
 import "./App.css";
 import { Banner } from "./components/banner/Banner";
+import { StatusBarUpdateContainer } from "./components/status-update/StatusBarUpdateContainer";
 import { UpcomingEvents } from "./components/events/UpcomingEvents";
 import { Header } from "./components/header/Header";
 import { Sponsors } from "./components/sponsors/Sponsors";
@@ -7,7 +8,7 @@ import { PastEvents } from "./components/events/PastEvents";
 import { Footer } from "./components/footer/Footer";
 import { About } from "./components/about/About";
 import { Analytics } from "@vercel/analytics/react";
-import { StatusUpdateBar } from "./components/status-update/StatusUpdateBar";
+
 import { OurTeam } from "./components/our-team/OurTeam";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
 
       {/* Main Page Content */}
       <Header />
-      <StatusUpdateBar />
+      <StatusBarUpdateContainer />
       <Banner />
       <Sponsors />
       <section id="upcoming">

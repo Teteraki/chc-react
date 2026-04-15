@@ -3,35 +3,36 @@ import React, { useEffect, useState } from "react";
 export type StatusKind = "info" | "warning" | "success" | "alert";
 
 interface StatusUpdateBarProps {
-  /** FUTURE: make all of these controlled via db table entry */
-  visible?: boolean; // <- added: controls initial visibility
+  visible?: boolean;
   kind?: StatusKind;
   message?: string;
   link?: { href: string; label: string } | null;
 }
 
 export const StatusUpdateBar: React.FC<StatusUpdateBarProps> = ({
-  // TODO: Replace these hard-coded defaults by values coming from your admin UI / context / API
-  visible = true, // <- you can pass this from an admin controller later
-  kind = "info", // hard set right now
-  message = "Next CHC event: The Arena Arc: Chapter 2 — Fri, Nov 7. Registration is open!",
-  link = { href: "https://start.gg/taa", label: "View details" },
+  visible = false,
+  kind = "info",
+  message = "",
+  link = null,
 }) => {
-  // Local (uncontrolled) visibility state for dismiss animation & Esc key
-  // FUTURE: i want a fully controlled component, sync this with the `visible` prop via onChange
   const [isVisible, setIsVisible] = useState<boolean>(visible);
 
-  // Close on Escape
+  useEffect(() => {
+    setIsVisible(visible);
+  }, [visible]);
+
   useEffect(() => {
     if (!isVisible) return;
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsVisible(false);
     };
+
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [isVisible]);
 
-  if (!isVisible) return null;
+  if (!isVisible || !message.trim()) return null;
 
   const palette: Record<
     StatusKind,
@@ -104,8 +105,7 @@ export const StatusUpdateBar: React.FC<StatusUpdateBarProps> = ({
     <div
       role="status"
       aria-live="polite"
-      // NOTE: fixed Tailwind "supports-[]" syntax for backdrop-filter
-      className={`${tone.bg} ${tone.text} backdrop-blur supports-[backdrop-filter]:bg-opacity-85`}
+      className={`${tone.bg} ${tone.text} backdrop-blur supports-backdrop-filter:bg-opacity-85`}
     >
       <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
         <div
@@ -116,7 +116,7 @@ export const StatusUpdateBar: React.FC<StatusUpdateBarProps> = ({
               <Icon />
             </span>
 
-            <p className="text-sm sm:text-base font-medium">
+            <p className="text-sm font-medium sm:text-base">
               {message}{" "}
               {link && (
                 <>
