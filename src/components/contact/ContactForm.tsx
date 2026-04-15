@@ -1,3 +1,4 @@
+import emailjs from "@emailjs/browser";
 import React, { useRef, useState, useEffect } from "react";
 
 export const ContactForm: React.FC = () => {
@@ -5,6 +6,34 @@ export const ContactForm: React.FC = () => {
   const panelRef = useRef<HTMLDivElement | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const [maxH, setMaxH] = useState(0);
+
+  const form = useRef<HTMLFormElement | null>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm(
+        "service_4tcbcwq",
+        "template_sl5gctg",
+        form.current,
+        "m1YGUcHwUfs8_o3d-",
+      )
+      .then(
+        () => {
+          alert("Thank you for reaching out!");
+
+          if (form.current) {
+            form.current.reset();
+          }
+        },
+        (error) => {
+          alert("Failed to send message, please try again later.");
+        },
+      );
+  };
 
   // Automatically update height when panel or textarea resizes
   useEffect(() => {
@@ -66,9 +95,10 @@ export const ContactForm: React.FC = () => {
           </a>
 
           <form
+            ref={form}
             className="mt-4 grid grid-cols-1 gap-4"
             onSubmit={(e) => {
-              e.preventDefault();
+              sendEmail(e);
               alert("Thanks! We’ll be in touch soon.");
             }}
           >
@@ -79,6 +109,7 @@ export const ContactForm: React.FC = () => {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   required
                   className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-gray-900/20"
                 />
@@ -89,6 +120,7 @@ export const ContactForm: React.FC = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   required
                   className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-gray-900/20"
                 />
@@ -101,6 +133,7 @@ export const ContactForm: React.FC = () => {
               </label>
               <input
                 type="text"
+                name="organization"
                 className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-gray-900/20"
               />
             </div>
@@ -111,6 +144,7 @@ export const ContactForm: React.FC = () => {
               </label>
               <textarea
                 ref={textareaRef}
+                name="message"
                 rows={4}
                 required
                 className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-gray-900/20 resize-y"
