@@ -30,7 +30,7 @@ export const ContactForm: React.FC = () => {
           }
         },
         (error) => {
-          alert("Failed to send message, please try again later.");
+          alert(`Failed to send message: ${error.text}`);
         },
       );
   };
