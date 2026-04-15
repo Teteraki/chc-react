@@ -32,57 +32,64 @@ const TEAM: TeamMember[] = [
   //   name: "Dylan Sanders",
   //   role: "Organizer • Full-Stack",
   //   headshot: "https://placehold.co/400x400/png?text=Dylan",
-  //   bio: "Leads A/V content & web for CHC. Focused on smooth brackets, great vibes, and clean code.",
+  //   bio: "Leads A/V content & website for CHC. Focused on smooth brackets, great vibes, and clean code.",
   //   tags: ["TO", "Dev", "Stream"],
   //   socials: [
   //     { kind: "github", href: "https://github.com/Teteraki" },
   //     { kind: "site", href: "#", label: "Portfolio" },
+  // { kind: "twitch", href: "https://twitch.tv/" },
+  //     { kind: "youtube", href: "https://youtube.com/" },
   //   ],
   // },
   {
-    id: "alex",
-    name: "Alex Kim",
-    role: "Broadcast • Production",
-    headshot: "https://placehold.co/400x400/png?text=Alex",
-    bio: "Scenes, cams, and crispy audio. Elevates every stream with reliable tech.",
-    tags: ["Stream", "AV", "OBS"],
-    socials: [
-      { kind: "twitch", href: "https://twitch.tv/" },
-      { kind: "youtube", href: "https://youtube.com/" },
-    ],
+    id: "steven",
+    name: "Steven",
+    role: "CHC President • Melee Lead",
+    headshot:
+      "https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/680959b8003c5b2d9c1b/view?project=68007df0002d3c24adaa&mode=admin",
+    bio: "Leads Cold Hands Collective with a longtime passion for competitive gaming, local tournament operations, and creative work in music production.",
+    tags: ["President", "Melee", "TO", "Creative"],
+    socials: [],
   },
   {
-    id: "alex2",
-    name: "Alex Kim",
-    role: "Broadcast • Production",
-    headshot: "https://placehold.co/400x400/png?text=Alex",
-    bio: "Scenes, cams, and crispy audio. Elevates every stream with reliable tech.",
-    tags: ["Stream", "AV", "OBS"],
-    socials: [
-      { kind: "twitch", href: "https://twitch.tv/" },
-      { kind: "youtube", href: "https://youtube.com/" },
-    ],
+    id: "heather",
+    name: "Heather",
+    role: "Finance • Melee Lead",
+    headshot:
+      "https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/680959a300275c6330cf/view?project=68007df0002d3c24adaa&mode=admin",
+    bio: "A longtime Smash competitor who supports Cold Hands through financial organization, equipment movement, and a love for competitive gaming tech.",
+    tags: ["Finance", "Melee", "TO", "Logistics"],
+    socials: [],
   },
   {
-    id: "sam",
-    name: "Sam Patel",
-    role: "Sponsorships • Community",
-    headshot: "https://placehold.co/400x400/png?text=Sam",
-    bio: "Local partnerships, prizing, and outreach. Bridges CHC with YYC orgs.",
-    tags: ["Partners", "Comms"],
-    socials: [
-      { kind: "instagram", href: "https://instagram.com/" },
-      { kind: "x", href: "https://x.com/" },
-    ],
+    id: "tyler",
+    name: "Tyler",
+    role: "Smash Ultimate Lead • Organizer",
+    headshot:
+      "https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/680959c10038dc88163d/view?project=68007df0002d3c24adaa&mode=admin",
+    bio: "A lifelong gamer and MRU student leading the Smash Ultimate scene and community efforts at Cold Hands.",
+    tags: ["Ultimate", "TO", "Lead", "Community"],
+    socials: [],
   },
   {
-    id: "riley",
-    name: "Riley Chen",
-    role: "Bracket Lead • Rules",
-    headshot: "https://placehold.co/400x400/png?text=Riley",
-    bio: "Runs pools, seeds fairly, and keeps the day moving. Player-first coordinator.",
-    tags: ["TO", "Rules"],
-    socials: [{ kind: "site", href: "#", label: "Ruleset" }],
+    id: "dylan",
+    name: "Dylan",
+    role: "Ultimate Co-Lead • IT & Stream",
+    headshot:
+      "https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/6809599c000fe6106ad7/view?project=68007df0002d3c24adaa&mode=admin",
+    bio: "Co-leads Smash Ultimate at Cold Hands and previously at MRU alongside Tyler. Has a strong passion for programming and systems.",
+    tags: ["Ultimate", "TO", "Dev", "IT / AV"],
+    socials: [{ kind: "github", href: "https://github.com/Teteraki" }],
+  },
+  {
+    id: "paulo",
+    name: "Paulo",
+    role: "Communications • Outreach",
+    headshot:
+      "https://fra.cloud.appwrite.io/v1/storage/buckets/68007f440024defdd52f/files/680959aa002fa54d21b0/view?project=68007df0002d3c24adaa&mode=admin",
+    bio: "Draws from collegiate and local esports experience to strengthen communications and support the communities that make the scene thrive.",
+    tags: ["Comms", "Graphics", "Esports"],
+    socials: [],
   },
 ];
 
@@ -149,7 +156,8 @@ function SocialIcon({ kind }: { kind: SocialKind }) {
 // --- Card ---------------------------------------------------------------
 const TeamCard: React.FC<{ member: TeamMember }> = ({ member }) => {
   return (
-    <article className="group relative  overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition">
+      {/* Top */}
       <div className="flex items-start gap-4">
         <img
           src={member.headshot}
@@ -161,6 +169,7 @@ const TeamCard: React.FC<{ member: TeamMember }> = ({ member }) => {
             {member.name}
           </h3>
           <p className="text-sm text-gray-300">{member.role}</p>
+
           {member.tags && member.tags.length > 0 && (
             <div className="mt-2 flex flex-wrap gap-2">
               {member.tags.map((t) => (
@@ -176,12 +185,12 @@ const TeamCard: React.FC<{ member: TeamMember }> = ({ member }) => {
         </div>
       </div>
 
+      {/* Bio (grows to fill space) */}
       {member.bio && (
-        <p className="mt-4 line-clamp-3 text-sm text-gray-200/90">
-          {member.bio}
-        </p>
+        <p className="mt-4 flex-grow text-sm text-gray-200/90">{member.bio}</p>
       )}
 
+      {/* Socials pinned to bottom */}
       {member.socials && member.socials.length > 0 && (
         <div className="mt-5 flex flex-wrap items-center gap-3">
           {member.socials.map((s) => (
@@ -200,7 +209,7 @@ const TeamCard: React.FC<{ member: TeamMember }> = ({ member }) => {
         </div>
       )}
 
-      {/* subtle accent on hover */}
+      {/* Hover accent */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-yellow-500 opacity-0 transition-opacity group-hover:opacity-100" />
     </article>
   );
@@ -209,9 +218,14 @@ const TeamCard: React.FC<{ member: TeamMember }> = ({ member }) => {
 // --- Grid ---------------------------------------------------------------
 const TeamGrid: React.FC<{ members: TeamMember[] }> = ({ members }) => {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="mt-10 flex flex-wrap justify-center gap-6">
       {members.map((m) => (
-        <TeamCard key={m.id} member={m} />
+        <div
+          key={m.id}
+          className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)]"
+        >
+          <TeamCard member={m} />
+        </div>
       ))}
     </div>
   );
