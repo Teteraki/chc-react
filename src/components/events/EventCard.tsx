@@ -57,7 +57,7 @@ function nextBiWeekly(now: Date, dow: number, time: string, anchorISO: string) {
   aligned.setHours(h, m, 0, 0);
 
   const diffDays = Math.floor(
-    (candidate.getTime() - aligned.getTime()) / 86400000
+    (candidate.getTime() - aligned.getTime()) / 86400000,
   );
   const weeks = Math.floor(diffDays / 7);
   const isCorrectWeek = weeks % 2 === 0;
@@ -83,7 +83,7 @@ function computeNextDatePretty(props: EventCardProps): string | undefined {
   if (freq === "bi-weekly") {
     // If you want to strictly require anchor for bi-weekly cadence, keep as-is:
     return formatPretty(
-      nextBiWeekly(now, props.dayOfWeek, props.time, props.initialDateISO)
+      nextBiWeekly(now, props.dayOfWeek, props.time, props.initialDateISO),
     );
   }
 
@@ -132,7 +132,7 @@ export const EventCard: React.FC<EventCardProps> = ({
       {/* Outer padding frame keeps spacing consistent */}
       <div className="relative ">
         {/* Image with fixed aspect ratio */}
-        <div className="relative w-full rounded-xl overflow-hidden">
+        <div className="relative w-full rounded-xl">
           <div className="aspect-square">
             <img
               alt={name}
